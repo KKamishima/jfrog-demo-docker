@@ -1,6 +1,9 @@
 node {
-    def mvnHome
-    stage('stage') {
+    stage('checkout') {
+        git branch: 'main', url: 'https://github.com/KKamishima/jfrog-demo-docker.git'
+    }
+    
+    stage('build') {
         def atag = '3.10.0'
         // def atag = 'latest'
 
